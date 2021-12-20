@@ -164,7 +164,21 @@ def player_stats(player_name)
   all_players.find{ |player| player[:player_name] == player_name }
 end
 
+
+###### FOR IX TO TRY (thank you, Ix)
+## The correct answer from the function should be 11, since Mason Plumlee
+## has the largest shoe size (at 19) and is the only one with 11 rebounds
+
+## The version that works
 def big_shoe_rebounds
   player_with_biggest_shoe = all_players.max{ |a, b| a[:shoe] <=> b[:shoe] }
   player_with_biggest_shoe[:rebounds]
 end
+
+## The version that doesn't work for some reason...
+# def big_shoe_rebounds
+#   player_with_biggest_shoe = all_players.max{ |a| a[:shoe] }
+#   player_with_biggest_shoe[:rebounds]
+# end
+
+binding.pry
